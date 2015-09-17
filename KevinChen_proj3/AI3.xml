@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BIF VERSION="0.3"  xmlns="http://www.cs.ubc.ca/labs/lci/fopi/ve/XMLBIFv0_3"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.cs.ubc.ca/labs/lci/fopi/ve/XMLBIFv0_3 http://www.cs.ubc.ca/labs/lci/fopi/ve/XMLBIFv0_3/XMLBIFv0_3.xsd">
+<NETWORK>
+<NAME>Untitled</NAME>
+<PROPERTY>detailed = </PROPERTY>
+<PROPERTY>short = </PROPERTY>
+
+<VARIABLE TYPE="nature">
+	<NAME>Smart</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7370.14013671875, 5053.14208984375)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Hardworking</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7503.3671875, 5056.953125)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Graduates with Good Grades</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7555.12744140625, 5179.8505859375)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Son of someone with a high position in a reputable company</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7704.646484375, 5113.4326171875)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Entrepreneurial Talent</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7129.96826171875, 5182.591796875)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Millionaire at age 30</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7445.4453125, 5407.28125)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Job at reputable company</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7708.40478515625, 5262.46435546875)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>High Executive at wealthy company</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7639.8056640625, 5350.1162109375)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Investing in good stocks</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7451.16162109375, 5348.21044921875)</PROPERTY>
+</VARIABLE>
+
+<VARIABLE TYPE="nature">
+	<NAME>Drops out and starts a successful company</NAME>
+	<OUTCOME>T</OUTCOME>
+	<OUTCOME>F</OUTCOME>
+	<PROPERTY>position = (7131.9912109375, 5333.91943359375)</PROPERTY>
+</VARIABLE>
+
+<DEFINITION>
+	<FOR>Smart</FOR>
+	<TABLE>0.5 0.5</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Hardworking</FOR>
+	<TABLE>0.5 0.5</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Graduates with Good Grades</FOR>
+	<GIVEN>Smart</GIVEN>
+	<GIVEN>Hardworking</GIVEN>
+	<TABLE>0.95 0.05 0.65 0.35 0.75 0.25 0.05 0.95</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Son of someone with a high position in a reputable company</FOR>
+	<TABLE>0.2 0.8</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Entrepreneurial Talent</FOR>
+	<TABLE>0.2 0.8</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Millionaire at age 30</FOR>
+	<GIVEN>High Executive at wealthy company</GIVEN>
+	<GIVEN>Investing in good stocks</GIVEN>
+	<GIVEN>Drops out and starts a successful company</GIVEN>
+	<TABLE>0.95 0.05 0.85 0.15 0.9 0.1 0.6 0.4 0.8 0.2 0.6 0.4 0.75 0.25 0.05 0.95</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Job at reputable company</FOR>
+	<GIVEN>Graduates with Good Grades</GIVEN>
+	<GIVEN>Son of someone with a high position in a reputable company</GIVEN>
+	<TABLE>0.9 0.1 0.7 0.3 0.8 0.2 0.05 0.95</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>High Executive at wealthy company</FOR>
+	<GIVEN>Job at reputable company</GIVEN>
+	<TABLE>0.5 0.5 0.0 1.0</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Investing in good stocks</FOR>
+	<GIVEN>Smart</GIVEN>
+	<GIVEN>Entrepreneurial Talent</GIVEN>
+	<TABLE>0.8 0.2 0.6 0.4 0.45 0.55 0.05 0.95</TABLE>
+</DEFINITION>
+
+<DEFINITION>
+	<FOR>Drops out and starts a successful company</FOR>
+	<GIVEN>Smart</GIVEN>
+	<GIVEN>Hardworking</GIVEN>
+	<GIVEN>Entrepreneurial Talent</GIVEN>
+	<TABLE>0.7 0.3 0.3 0.7 0.4 0.6 0.1 0.9 0.45 0.55 0.05 0.95 0.1 0.9 0.05 0.95</TABLE>
+</DEFINITION>
+</NETWORK>
+</BIF>
